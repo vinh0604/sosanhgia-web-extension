@@ -2,9 +2,6 @@
   "manifest_version": 2,
   "name": "So Sanh Gia",
   "version": "0.0.1",
-  "applications": {
-
-  },
   "content_scripts": [{
     "matches": [
       "http://www.google.com.vn/*",
@@ -23,13 +20,5 @@
     "css": [
       "bundle.css"
     ]
-  }],
-  "permissions": [
-    "http://*.google.com.*/",
-    "https://*.google.com.*/",
-    "http://*.google.com/",
-    "https://*.google.com/",
-    "http://*.google.co.*/",
-    "https://*.google.co.*/"
-  ]
+  }]
 }
