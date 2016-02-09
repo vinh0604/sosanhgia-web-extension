@@ -1,17 +1,5 @@
 import $ from 'jquery'
-
-const POTENTIAL_VENDORS = [
-  "tiki",
-  "lazada",
-  "adayroi",
-  "sendo",
-  "nguyenkim",
-  "thegioididong",
-  "dienmayxanh",
-  "pico"
-]
-const DOMAIN_PREFIX = /^(https?:\/\/(www\.?)?)?/
-const SEPARATORS = /[-\(]/
+import ProductSearch from './product_search'
 
 let mutationObserverConfig = {
   childList: true
@@ -21,18 +9,8 @@ let mutationObserver = new MutationObserver(function (mutationRecords) {
     if (typeof mutationRecord.addedNodes === "object") {
       let searchResults = mutationRecord.target.querySelectorAll(".srg .g")
       searchResults = [].slice.call(searchResults, 0, 10)
-      if (searchResults.length) {
-        let shoppingItem = searchResults.find((elem) => {
-          let domain = elem.querySelector('cite').innerText.replace(DOMAIN_PREFIX, "")
-          return POTENTIAL_VENDORS.find((vendor) => { return domain.startsWith(vendor) })
-        })
-
-        if (shoppingItem) {
-          let title = shoppingItem.querySelector('.r a').innerText
-          title = title.split(/[-\(]/, 1)[0].trim()
-          console.log("Title", title)
-        }
-      }
+      let title = ProductSearch.extractTitle(searchResults)
+      console.log(title)
     }
   })
 })
