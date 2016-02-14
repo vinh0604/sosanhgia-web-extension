@@ -11,12 +11,16 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+  shim: {
+    "jquery-mockjax": ["jquery"]
+  },
 
   map: {
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "chai": "npm:chai@3.5.0",
     "core-js": "npm:core-js@1.2.6",
+    "jquery-mockjax": "github:jakerella/jquery-mockjax@2.1.1",
     "jquery": "npm:jquery@2.2.0",
     "lodash": "npm:lodash@4.2.1",
     "github:jspm/nodelibs-assert@0.1.0": {
