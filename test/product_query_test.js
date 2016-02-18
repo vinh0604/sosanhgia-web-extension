@@ -21,11 +21,17 @@ describe("ProductQuery", function () {
   ]
 
   describe("#query", function () {
-    it("should request to server with product title", function (done) {
+    beforeEach(function () {
+      $.mockjax({
+        url: '/api/products',
+        data: { title: "Tôi Thấy Hoa Vàng Trên Cỏ Xanh" },
+        responseText: sampleData
+      })
+    })
+    it("should request to server with product title", function () {
       let title = "Tôi Thấy Hoa Vàng Trên Cỏ Xanh"
       ProductQuery.query(title).then(function (data) {
         expect(data).to.equal(sampleData)
-        done()
       })
     })
   })

@@ -11,10 +11,17 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-  shim: {
-    "jquery-mockjax": ["jquery"]
+  "meta": {
+    "github:jakerella/jquery-mockjax@2.1.1/src/jquery.mockjax.js": {
+      "format": "global"
+    }
   },
-
+  "shim": {
+    "jquery-mockjax": {
+      "deps": "jquery",
+      "exports": "jQuery.fn.mockjax"
+    }
+  },
   map: {
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
