@@ -11,25 +11,28 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-  "meta": {
-    "github:jakerella/jquery-mockjax@2.1.1/src/jquery.mockjax.js": {
-      "format": "global"
-    }
-  },
-  "shim": {
+  shim: {
     "jquery-mockjax": {
       "deps": "jquery",
       "exports": "jQuery.fn.mockjax"
     }
   },
+
+  meta: {
+    "github:jakerella/jquery-mockjax@2.1.1/src/jquery.mockjax.js": {
+      "format": "global"
+    }
+  },
+
   map: {
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "chai": "npm:chai@3.5.0",
     "core-js": "npm:core-js@1.2.6",
-    "jquery-mockjax": "github:jakerella/jquery-mockjax@2.1.1",
     "jquery": "npm:jquery@2.2.0",
+    "jquery-mockjax": "github:jakerella/jquery-mockjax@2.1.1",
     "lodash": "npm:lodash@4.2.1",
+    "text": "github:systemjs/plugin-text@0.0.4",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },

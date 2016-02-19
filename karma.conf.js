@@ -17,6 +17,7 @@ module.exports = function(config) {
       ],
       serveFiles: [
         "src/**/*.js",
+        "src/templates/**/*.html",
         "test/fixtures/**/*.html"
       ]
     },

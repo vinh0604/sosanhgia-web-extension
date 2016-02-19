@@ -1,0 +1,20 @@
+<ul>
+  <% products.forEach(function (product) { %>
+    <li>
+      <div>
+        <a href="<%= product.link %>" target="_blank">
+          <img src="<%= product.image %>" alt="<%= product.title %>">
+          <span><%= product.title %></span>
+        </a>
+        <p>
+          <span>Nơi bán</span>
+          <strong><%= product.store %></strong>
+        </p>
+        <p>
+          <span>Giá</span>
+          <strong><%= product.price %></strong>
+        </p>
+      </div>
+    </li>
+  <% }); %>
+</ul>
