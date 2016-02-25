@@ -11,10 +11,12 @@ let mutationObserver = new MutationObserver(function (mutationRecords) {
       let searchResults = mutationRecord.target.querySelectorAll(".srg .g")
       searchResults = [].slice.call(searchResults, 0, 10)
       let title = ProductSearch.extractTitle(searchResults)
-      ProductQuery.query(title).then(function (data) {
-        ProductsListView.render(data);
-      }).catch(function (err) {
-
+      chrome.runtime.sendMessage({title: title}, function(response) {
+        if (response.success) {
+          ProductsListView.render(response.data.products);
+        } else {
+          console.log(response.error)
+        }
       });
     }
   })

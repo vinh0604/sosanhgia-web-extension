@@ -11,7 +11,7 @@
       "http://www.google.com.sg/*",
       "https://www.google.com.sg/*"
     ],
-    js: [
+    "js": [
       "system.js",
       "config.js",
       "bundle.js",
@@ -20,5 +20,13 @@
     "css": [
       "bundle.css"
     ]
-  }]
+  }],
+  "background": {
+    "scripts": [
+      "system.js",
+      "config.js",
+      "background_bundle.js",
+      "background.js"
+    ]
+  }
 }

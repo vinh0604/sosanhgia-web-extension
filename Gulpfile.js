@@ -11,6 +11,12 @@ gulp.task('js', function () {
       .pipe(rename('bundle.js'))
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('dist/'));
+  gulp.src('src/background.js')
+      .pipe(sourcemaps.init())
+      .pipe(jspm())
+      .pipe(rename('background_bundle.js'))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('js:watch', function () {
@@ -36,6 +42,7 @@ gulp.task('copy', function () {
         '*fonts/**/*',
         'index.html',
         'index.js',
+        'background.js',
         'jspm_packages/system.js',
         'config.js',
         'manifest.json'])
